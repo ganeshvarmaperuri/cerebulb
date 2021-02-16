@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Category Details
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+    <h2>{{category_details.category_name}}</h2>
+    <h6>{{category_details.category_code}}</h6>
+    <h6>{{category_details.created_at}}</h6>
+    <h6>{{category_details.updated_at}}</h6>
+    <a class="btn btn-info" href="{% url 'category_update' category_details.id %}">Update</a>
+    <a class="btn btn-danger" href="#">Delete</a>
+</div>
+
+
+
+{% endblock %}

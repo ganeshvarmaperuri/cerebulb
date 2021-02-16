@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Category Details
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+    <img src="{{product_details.product_images.url}}" />
+    <h2>{{product_details.product_name}}</h2>
+    <h6>{{product_details.product_code}}</h6>
+    <h6>{{product_details.product_mfg_date}}</h6>
+    <h6>{{product_details.category}}</h6>
+    <a class="btn btn-info" href="{% url 'product_update' product_details.id %}">Update</a>
+    <a class="btn btn-danger" href="{% url 'product_delete' product_details.id %}">Delete</a>
+</div>
+
+
+
+{% endblock %}
